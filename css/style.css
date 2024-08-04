@@ -1,0 +1,401 @@
+﻿*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family:sans-serif;
+   /* perspective:600px;*/
+}
+.container{
+    width:80%;
+    margin:auto;
+}
+header{
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.header-table {
+    position: absolute;
+    display: flex;
+    font-size: 14px;
+    width: 400px;
+    /* display:none;*/
+    justify-content: space-around;
+    background-color: #ffe6e693;
+    border: 1px solid black;
+    right: 300px;
+    top: 80px;
+    transform: scale(0,0);
+    transition: 0.5s;
+}
+.table-list {
+    padding: 10px 0px;
+}
+.table-list a {
+    text-decoration: none;
+    /* font-family:Arial;*/
+}
+.table-list p {
+    font-size: 13px;
+    line-height: 16px;
+    color: black;
+}
+.table-title{
+    color:#BD1616;
+    text-decoration:underline solid ;
+}
+.table:hover ~ .header-table, .header-table:hover {
+    transform: scale(1.2,1);
+}
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+.header-list li{
+    width:100%;
+    height:25px;
+    position:relative;
+}
+    .header-list li::after, .header-list li ::before{
+        position:absolute;
+        content:'';
+        width:0;
+        height:0;
+        opacity:0 ;
+        transition:1s;
+        z-index :-1;
+    }
+    .header-list li ::before {
+        border-left: 2px solid #BD1616;
+        border-right: 2px solid #BD1616;
+        top:0;
+        left:0;
+        transform-origin:bottom;
+    }
+    .header-list li::after {
+        border-top: 2px solid #BD1616;
+        border-bottom: 2px solid #BD1616;
+        bottom:0;
+        right:0;
+        transform-origin:left;
+        transition-delay:0.25s;
+    }
+    .header-list li:hover::after, .header-list li:hover ::before {
+        width: 98%;
+        height: 95%;
+        opacity:1;
+    }
+    .header-list li, .featured-list li {
+        list-style: none;
+        display: inline;
+        margin: 0px 20px;
+        padding: 10px 10px;
+        transition: 2s;
+    }
+    .featured-list {
+        width:46%;
+        height:60px;
+        margin:auto;
+        font-size:19px;
+        color:#9e1212;
+    }
+
+/*.header-list li:hover {*/
+    /* border:1px solid #BD1616;*/
+    /*animation-name: border-anim;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    border: 2px solid transparent;
+}
+    @keyframes border-anim {
+        0% {
+            border-right-color: #BD1616;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+        25% {
+            border-left-color: #BD1616;
+        }
+        50% {
+            border-bottom-color: #BD1616;
+        }
+        75% {
+            border-top-color: #BD1616;
+        }
+        100% {
+            border: 2px solid #BD1616;
+        }
+}*/
+    .header-list a {
+        text-decoration: none;
+        color: #BD1616;
+        font-size: 17.5px;
+    }
+.icon{
+    font-size:26px;
+    margin:0px 5px;
+}
+.zero {
+    color: #FF2626;
+}
+.header-icon span{
+    font-size:15px;
+}
+main {
+    height: 70vh;
+    background-image:url(../images/img-main.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position-y:-50px;
+}
+.main-title1 {
+    position: absolute;
+    top: 34%;
+    left: 13%;
+    font-size: 60px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+.main-title2 {
+    position: absolute;
+    top: 53%;
+    left: 15%;
+    font-size: 65px;
+    color: #BD1616;
+    text-shadow: 1px 1px 2px black;
+}
+.category-title, .featured-title {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 45px;
+    text-shadow: 1px 1px 2px #141313;
+   
+}
+    .category-title:hover + .line, .featured-title:hover + .line {
+        transform:scale(2,1);
+    }
+    .category-perent {
+        display: flex;
+        justify-content: space-between;
+    }
+.category-item{
+    width:24%;
+    padding-bottom:60px;
+}
+.category-item img{
+    width:100%;
+    height:85%;
+}
+    /*.category-item span {
+        font-weight:600;
+        font-size:20px
+    }*/
+    .category-item p {
+        color: #BD1616;
+        font-size:12.5px;
+        padding-top:25px;
+    }
+    .category-greater {
+        width: 30px;
+        height: 30px;
+        color:white;
+        background-color: #BD1616;
+        padding:6px 0px 0px 2.5px;
+       /* display:inline-block;*/
+        margin:-30px 0 0px auto;
+        text-align:center;
+        opacity:0;
+       font-size:20px;
+    }
+.category-item:hover .category-greater {
+    opacity: 1;
+}
+
+.discount-perent, .icons-perent, .featured-perent1-card {
+    display: flex;
+    justify-content: space-between;
+}
+.icons-perent {
+    padding: 60px 0 20px;
+    justify-content: space-around;
+}
+.discount-item-lg {
+    flex-basis: 48%;
+    padding: 15px 15px;
+    background-color: #ffe6e63e;
+}
+.discount-item-s {
+    flex-basis: 24%;
+    padding: 15px 15px;
+    color: #BD1616;
+    padding-top: 25px;
+    text-shadow: 1px 1px 0 black;
+    transition: 0.5s;
+}
+    .discount-item-s h3{
+        color: aliceblue;
+        font-size:24px;
+    }
+    .discount-item-s:hover{
+        transform:scale(1.1,1.1);
+       
+    }
+    .discount-title-p {
+        display: inline-block;
+    }
+.discount-title-p p{
+   
+}
+.discount-item-lg i{
+    font-size:50px;
+    color:#BD1616;
+}
+.discount-item-lg article{
+    padding-top:25px;
+}
+.s1{
+    background-image:url(../images/sushi4.jpg) ;
+    background-size:cover;
+}
+.s2 {
+    background-image: url(../images/img-main3.jpg);
+    background-size: cover;
+}
+.discount-dash {
+    width: 160px;
+    margin-left: auto;
+    padding:20px 0 10px;
+}
+    .discount-dash div {
+        display: inline-block;
+        width: 50px;
+        height: 2px;
+        background-color: #BD1616;
+       
+    }
+.icons-item{
+    width:19%;
+    height:110px;
+    border-right: 1px solid black;
+    text-align:center;
+}
+    .icons-item p {
+        color: #808080;
+    }
+.icons-back {
+    width: 100%;
+    height: 50%;
+    background-image: url(../images/service-icon.png);
+    background-repeat: no-repeat;
+}
+.icon1 .icons-back {
+    background-position: center 7px;
+    transition:0.5s;
+}
+.icon1:hover .icons-back {
+    background-position: center -85px;
+}
+.icon2 .icons-back {
+    background-position: center -180px;
+    transition: 0.5s;
+}
+
+.icon2:hover .icons-back {
+    background-position: center -270px;
+}
+.icon3 .icons-back {
+    background-position: center -363px;
+    transition: 0.5s;
+}
+
+.icon3:hover .icons-back {
+    background-position: center -455px;
+}
+.icon4 .icons-back {
+    background-position: center -547px;
+    transition: 0.5s;
+}
+
+.icon4:hover .icons-back {
+    background-position: center -637px;
+}
+.icon5 .icons-back {
+    background-position: center -727px;
+    transition: 0.5s;
+}
+
+.icon5:hover .icons-back {
+    background-position: center -820px;
+}
+.featured-perent-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 525px;
+   
+}
+.featured-perent1-card {
+    flex-wrap: wrap;
+    height: 260px;
+}
+.featured-card {
+    flex-basis: 32%;
+    height: 100%;
+    position: relative;
+    gap: 20px 20px;
+    transition: all 1.5s;
+    transform-style: preserve-3d;
+}
+.featured-card img{
+   width:100%;
+   height:100%;
+}
+.card-front{
+    width:100%;
+    height:70%;
+    position :absolute; 
+    backface-visibility:hidden;
+}
+.card-back {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    text-align: center;
+    line-height: 22px;
+    background-color: #ffe6e693;
+    z-index: -1;
+    padding-top: 15%;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+    .card-back h3 {
+        color: #BD1616;
+        text-shadow: 1px 1px 1px black;
+    }
+    .featured-info {
+        width:100%;
+        position: absolute;
+        top: 73%;
+    }
+    .featured-card:hover{
+        transform:rotateY(180deg);
+    }
+.featured-card:hover .featured-info {
+    transform: rotateY(180deg);
+    transition:0s;
+    
+}
+.featured-info i {
+    color: #BD1616;
+}
+.line {
+    width: 90px;
+    height: 1.5px;
+    background-color: #BD1616;
+    margin: -35px auto 70px;
+    transition: 1s
+}
